@@ -8,11 +8,13 @@ This is a weather application built with Node.js, Express, and MongoDB for the b
    
    ```bash
    git clone https://github.com/RawabyRahal/Weather.git
-3. **Navigate to the project directory**:
+   
+2. **Navigate to the project directory**:
    
     ```bash
-    cd weather-app
-5. **Install backend dependencies**:
+    cd Weather
+    
+3. **Install backend dependencies**:
    
     ```bash
    npm install
@@ -22,6 +24,6 @@ This is a weather application built with Node.js, Express, and MongoDB for the b
    
    ```bash
    node server/server.js
-3. **Access the application**:
+2. **Access the application**:
    
    Open your web browser and navigate to http://localhost:8585.
