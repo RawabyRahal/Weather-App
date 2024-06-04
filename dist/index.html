@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="theme-container">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+            </label>
+        </div>
+        <div class="search-result">
+            <div id="search-container">
+                <!-- <i class="fas fa-map-marker-alt"></i> -->
+                <input type="text" id="search" class="form-control" placeholder="location">
+                <button id="searchbtn" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div id="weather"></div>
+
+            <script id="weather-template" type="text/x-handlebars-template">
+            <div class="weather-card">
+                <div class="weather-card-icons">
+                    <i class="fa fa-plus" title="Save" style="cursor: pointer;margin-bottom: 40px; display: flex; justify-items: start; color: black;"></i>
+                    <span class="reload" title="Refresh">&#x21bb;</span>
+                </div>
+                <br>
+                <div class="weather">
+                    <h1 class="temp">{{temperature}}&#8451;</h1>
+                    <h2 class="city">
+                        <i class="fas fa-map-marker-alt"></i>
+                        {{name}}
+                    </h2>
+                    <div class="details">
+                        <div style="display: flex;" class="col">
+                            <div class="info">
+                                <p class="humidity">{{condition}}</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info">
+                                <p class="wind">
+                                    <i class="wi wi-owm-{{conditionPic}}"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <p style="display: flex; align-items: flex-end; color: black; font-size: 11px; font-weight: bold;">Last Update:<br> {{lastUpdated}}</p>
+                </div>
+            </div>
+        </script>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/handlebars/dist/handlebars.js"></script> -->
+    <script src="consts.js"></script>
+    <script src="WeatherManager.js"></script>
+    <script src="Render.js"></script>
+    <script src="main.js"></script>
+    <script src="event-handlers.js"></script>
+</body>
+
+</html>
